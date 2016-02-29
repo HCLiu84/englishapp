@@ -1,0 +1,28 @@
+
+  <% if user_signed_in? %>  
+    <%= link_to "登出", destroy_user_session_path, method: :delete  %>
+
+    <%= form_tag addtag_path do %>
+      <%= text_field_tag :words%>
+      <%= submit_tag%>
+    <% end %>
+
+
+
+    <table>
+      <% @user.word_list.each do |word| %>
+        <tr>
+          <td> # </td>
+          <td> <%= word %> </td>
+          <td> <%= link_to("Delete", removetag_path(word), :class => "btn btn-mini", \
+              :method=>:delete,:confirm=>"Areyousure?")%>
+          </td> 
+        </tr>
+        <% end %> 
+    </table>
+
+  <% else %>
+    <%= link_to "登入", new_user_session_path %>
+    <%= link_to "註冊", new_user_registration_path %>
+  <% end %>
+
