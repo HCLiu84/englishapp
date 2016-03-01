@@ -27,7 +27,10 @@
           <tr>
             <td> # </td>
             <td>
-                <a href= <%= "http://cdict.net/?q=" + word %> target="iframe_a"> 
+                <a href= <%= "http://dictionary.cambridge.org/zht/"\
+                    + "%E8%A9%9E%E5%85%B8/"\
+                    + "%E8%8B%B1%E8%AA%9E-%E6%BC%A2%E8%AA%9E-%E7%B9%81%E9%AB%94/"\
+                    + word%> target="iframe_a"> 
                 <%= word %> </a>
             </td>
             <td> <%= link_to("Delete", removetag_path(word), :class => "btn btn-mini", \
@@ -38,7 +41,7 @@
       </table>
     </div>
     <div id = "transfer">
-      <iframe width="100%" height="100%" src="http://cdict.net" name="iframe_a">
+      <iframe width="100%" height="100%" src="http://dictionary.cambridge.org/zht/" name="iframe_a">
       </iframe>
     </div>
 
